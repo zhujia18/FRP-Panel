@@ -15,6 +15,7 @@
 		A4797B6A1F06BFDD002B2FB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4797B681F06BFDD002B2FB0 /* LaunchScreen.storyboard */; };
 		A4797B751F06BFDD002B2FB0 /* FRPPanelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4797B741F06BFDD002B2FB0 /* FRPPanelTests.m */; };
 		A4797B801F06BFDD002B2FB0 /* FRPPanelUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4797B7F1F06BFDD002B2FB0 /* FRPPanelUITests.m */; };
+		A48940681F06CB1A006A4D8D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48940671F06CB1A006A4D8D /* AFNetworking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A4797B7B1F06BFDD002B2FB0 /* FRPPanelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FRPPanelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4797B7F1F06BFDD002B2FB0 /* FRPPanelUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRPPanelUITests.m; sourceTree = "<group>"; };
 		A4797B811F06BFDD002B2FB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A48940671F06CB1A006A4D8D /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A48940681F06CB1A006A4D8D /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 				A4797B731F06BFDD002B2FB0 /* FRPPanelTests */,
 				A4797B7E1F06BFDD002B2FB0 /* FRPPanelUITests */,
 				A4797B581F06BFDD002B2FB0 /* Products */,
+				A48940661F06CB1A006A4D8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +144,14 @@
 			path = FRPPanelUITests;
 			sourceTree = "<group>";
 		};
+		A48940661F06CB1A006A4D8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A48940671F06CB1A006A4D8D /* AFNetworking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,6 +162,7 @@
 				A4797B531F06BFDD002B2FB0 /* Sources */,
 				A4797B541F06BFDD002B2FB0 /* Frameworks */,
 				A4797B551F06BFDD002B2FB0 /* Resources */,
+				A48940691F06CBE2006A4D8D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -267,6 +280,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A48940691F06CBE2006A4D8D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AFNetworking.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A4797B531F06BFDD002B2FB0 /* Sources */ = {
@@ -424,6 +454,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FRPPanel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -436,6 +470,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FRPPanel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -509,6 +547,7 @@
 				A4797B861F06BFDD002B2FB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4797B871F06BFDD002B2FB0 /* Build configuration list for PBXNativeTarget "FRPPanelTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +556,7 @@
 				A4797B891F06BFDD002B2FB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4797B8A1F06BFDD002B2FB0 /* Build configuration list for PBXNativeTarget "FRPPanelUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +565,7 @@
 				A4797B8C1F06BFDD002B2FB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
