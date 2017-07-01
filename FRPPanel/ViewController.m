@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import <AFNetworking/AFNetworking.h>
+#import <Charts/Charts.h>
+#import <Charts/Charts-Swift.h>
 
 @interface ViewController ()
 
@@ -19,11 +21,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSString *urlString = @"http://xxxxxxxxx";
+    NSString *urlString = @"xxxxxx";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 
-    NSString *authStr = [NSString stringWithFormat:@"xxx:xxxxx"];
+    NSString *authStr = [NSString stringWithFormat:@"xxxxxx"];
     NSData *base64Data = [authStr dataUsingEncoding:NSUTF8StringEncoding];
     NSString *base64Str = [base64Data base64EncodedStringWithOptions:0];
     NSString *authorization = [NSString stringWithFormat:@"Basic %@",base64Str];
@@ -38,8 +40,9 @@
         NSLog(@"error = %@",error);
     }];
     
+    
+    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
